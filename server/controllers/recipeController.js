@@ -1,4 +1,4 @@
-let id = 3
+let id = 9
 const myRecipes =[
     {
         id: 1,
@@ -7,7 +7,7 @@ const myRecipes =[
         calories: 82,
         servingsize: '1 piece',
         recipe: 'chicken flour 6 eggs buttermilk seasoning frying oil',
-        imgURL: '',
+        imgURL: 'https://media.giphy.com/media/1dGYJVktc6WhWUD2sj/giphy.gif',
         rating: 0,
     },
     {
@@ -17,17 +17,17 @@ const myRecipes =[
         calories: 450,
         servingsize: '1 cup',
         recipe: '1tbps butter, 1tbps olive oil, 1 cup, 1/4ts salt, cheese, heavy milk',
-        imgURL: '',
+        imgURL: 'https://media.giphy.com/media/eNvU6yf8mUNM03x1Jy/giphy.gif',
         rating: 0,
     },
     {
         id: 3,
-        name: 'sirloin steak',
+        name: 'Sirloin Steak',
         type: 'steak/protein',
         calories: 500,
         servingsize: '1/4 ounce',
         recipe: '1tbps butter, 1tbps olive oil, 1 cup, black pepper, garlic',
-        imgURL: '',
+        imgURL: 'https://media.giphy.com/media/ekkUw0f1yEdPU5tS2i/giphy.gif',
         rating: 0,
     },
     {
@@ -78,7 +78,7 @@ const myRecipes =[
         servingsize: '1 serving',
         recipe: 'spaghetti of choice, maranara sauce, parmsean cheese, grilled meatballs',
         imgURL: '',
-        rating: 0,
+        rating: 0
     },
     
 ]

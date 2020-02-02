@@ -25,34 +25,34 @@ export default class AddRecipe extends React.Component {
     component
     render() {
         return (
-            <div>
-                <p>Enter A New Recipe </p>
+            <section id='inputfield'>
+                <h1>Enter A New Recipe </h1>
                 <input
                     name='name'
-                    placeholder="enter Recipe Name"
+                    placeholder="Enter Recipe Name"
                     onChange={this.handleChange} />
                 <input
                     name='type'
-                    placeholder="enter type of Recipe"
+                    placeholder="Enter Type of Recipe"
                     onChange={this.handleChange}  />
                 <input    
                     name ='calories'
-                    placeholder= "enter calories"
+                    placeholder= "Enter Calories"
                     onChange={this.handleChange} />
                 <input    
                     name ='servingsize'
-                    placeholder= "enter server size"
-                    onChange={this.handleChange} />
-                <input    
-                    name ='recipe'
-                    placeholder= "enter ingredients"
+                    placeholder= "Enter server size"
                     onChange={this.handleChange} />
                 <input    
                     name ='imgURL'
-                    placeholder= "enter img url"
+                    placeholder= "Enter Img url"
                     onChange={this.handleChange} />
-                <button onClick={this.pushRecipe}>add</button>
-            </div>
+                <input id='enteringredients'   
+                    name ='recipe'
+                    placeholder= "Enter Ingredients"
+                    onChange={this.handleChange} />
+                <button id='addrecipe'onClick={this.pushRecipe}>Submit</button>
+            </section>
         )
     }
 }

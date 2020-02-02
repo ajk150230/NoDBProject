@@ -3,6 +3,7 @@ import axios from 'axios'
 import AddRecipe from './components/AddRecipe'
 import Map from './components/Map'
 import RandomMeals from './components/RandomMeals'
+import './App.css'
 
 class App extends React.Component {
   constructor(props) {
@@ -84,13 +85,13 @@ class App extends React.Component {
       )
     })
     return (
-      <div>
+      <div id='main'>
         <header>
-            <button onClick={this.displayHome}>Home</button>
-            <button onClick={this.displayInput}>Input</button>
-            <button onClick={this.displayMeals}>Meals</button>
-            <button onClick={this.displayWeekly}>Generate Meal Plan</button>
-          </header>
+            <button id='topbutton' onClick={this.displayHome}>Home</button>
+            <button id='topbutton' onClick={this.displayInput}>Input</button>
+            <button id='topbutton' onClick={this.displayMeals}>Meals</button>
+            <button id='topbutton' onClick={this.displayWeekly}>WeeklyPlan</button>
+        </header>
         {/* <section>
         <AddRecipe postRecipe={this.postRecipe} />
         <h1>Current Recipes</h1>
@@ -103,7 +104,7 @@ class App extends React.Component {
         {
           this.state.display === 'home'
             ?
-            <h1> The Last Meal </h1>
+            <h1 id='title'> The Last Meal </h1>
             :
             this.state.display === 'input'
               ?
@@ -111,7 +112,7 @@ class App extends React.Component {
               :
               this.state.display === 'meals'
                 ?
-                <div>
+                <div id='currentrecipes'>
                   <h1>Current Recipes</h1>
                   {mealsMapped}
                 </div>

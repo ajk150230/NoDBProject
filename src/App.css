@@ -1,38 +1,134 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#main{
   display: flex;
   flex-direction: column;
-  align-items: center;
+  height: 800px;
+}
+header {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  box-shadow: 2px 2px 5px gray;
+}
+#topbutton{
+  background-color: rgb(0, 153, 255);
   color: white;
+  border: solid white 5px;
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+}
+#title{
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  align-content: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
-.App-link {
-  color: #61dafb;
+
+
+
+
+
+
+#inputfield{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+#enteringredients{
+  height: 100px;
+}
+input{
+  margin: 2px;
+}
+#addrecipe{
+  border: none;
+  color: white;
+  background-color: rgb(255, 77, 77);
+  box-shadow: 2px 2px 5px gray;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+
+
+#currentrecipes{
+  text-align: center;
+  color: rgb(0, 0, 0);
 }
+#mealCard{
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  border: solid rgb(255, 255, 255);
+  width: 90%;
+  box-shadow: 2px 2px 8px gray;
+  background-image: linear-gradient(to bottom, white, rgb(245, 245, 245))
+}
+#mealName{
+  display: flex;
+  justify-content: space-around;
+  color: rgb(29, 29, 29);
+  border-radius: 6px;
+  background-image: linear-gradient(to bottom right, rgb(255, 255, 255), rgb(255, 255, 255), rgb(219, 219, 219))
+}
+#stars{
+  color: blueviolet;
+}
+#micro{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: rgb(70, 43, 226)
+}
+#imagecard{
+  display: flex;
+  justify-content: center;
+}
+#foodimg{
+  width: 100px;
+  display: flex;
+  align-items: center;
+}
+#rating{
+  display: flex;
+  justify-content: center;
+}
+#rateinput{
+  width: 75px;
+  background-color: #3CBC8D;
+  color: rgb(0, 0, 0);
+  border: 3px solid rgb(207, 207, 207);
+}
+::placeholder{
+  color: rgb(206, 206, 206);
+}
+#rate{
+  width:75px;
+  height: 35px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(77, 184, 255);
+  border: white solid 2px;
+  border-radius: 10px;
+}
+#delete{
+  width:75px;
+  height: 35px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(255, 77, 77);
+  border: white solid 2px;
+  border-radius: 10px;
+}
+
+
+
+
+
+
+#eachday{
+  display: flex;
+  box-shadow: 2px 2px 5px gray;
+  margin: 0 auto;
+  width: 85%;
+}
+

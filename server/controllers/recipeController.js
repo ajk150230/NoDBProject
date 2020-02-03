@@ -37,7 +37,7 @@ const myRecipes =[
         calories: 300,
         servingsize: '1 taco',
         recipe: 'taco meat, cheese, torilla, onions, queso',
-        imgURL: '',
+        imgURL: 'https://www.visitroseville.com/wp-content/uploads/2014/09/Taco.gif',
         rating: 2.5,
     },
     {
@@ -132,6 +132,7 @@ const myRecipes =[
     },
     
 ]
+
  module.exports = {
     viewRecipes: (req, res) => {
         const {lowcalories} = req.query;
@@ -152,14 +153,15 @@ const myRecipes =[
          res.status(200).json(myRecipes)
      },
      recipeRate: (req, res) => {
-        const targetID = myRecipes.findIndex(recipe => recipe.id === +req.params.id)
-        myRecipes[targetID].rating = req.body.rating
-        console.log(myRecipes[targetID].rating)
+        const id = myRecipes.findIndex(recipe => recipe.id === +req.params.id)
+        myRecipes[id].rating = req.body.rating
+        console.log(myRecipes[id].rating)
         res.status(200).json(myRecipes)
      },
      recipeDelete: (req, res) => {
-         const targetID = myRecipes.findIndex(recipe => recipe.id ===+ req.params.id)
-             myRecipes.splice(targetID, 1)
+         const id = myRecipes.findIndex(recipe => recipe.id === +req.params.id)
+         console.log(id, req.params.id);
+             myRecipes.splice(id, 1)
              res.status(200).json(myRecipes) 
      }
 }

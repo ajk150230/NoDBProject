@@ -3,9 +3,6 @@ import React, { Component } from 'react'
 export default class RandomMeals extends Component {
     constructor() {
         super()
-        this.state = {
-            mealArr: []
-        }
         this.rng = this.rng.bind(this)
         this.goose = this.goose.bind(this)
     }
@@ -25,8 +22,7 @@ export default class RandomMeals extends Component {
             obj.dinner = this.props.myRecipes[rand2]
             arr2.push(obj)
         }
-        this.setState({ mealArr: arr2 })
-        this.props.showWeekly(this.state.mealArr)
+        this.props.showWeekly(arr2)
     }
     goose() {
         return Math.floor(Math.random() * this.props.myRecipes.length)
@@ -38,13 +34,13 @@ export default class RandomMeals extends Component {
                     <h1 id='day'>{element.day}</h1>
                     <section id='eachday'>
                         <div id='lunch'>
-                            <h2>Lunch</h2>
+                            <h2 id='daylunch'>Lunch</h2>
                             <h4>{element.lunch.name}</h4>
                             <h6>{element.lunch.calories} Calories per serving</h6>
                             <h6>{element.lunch.recipe}</h6>
                         </div>
                         <div id='dinner'>
-                            <h2>Dinner</h2>
+                            <h2 id='daydinner'>Dinner</h2>
                             <h4>{element.dinner.name}</h4>
                             <h6>{element.dinner.calories} Calories per serving</h6>
                             <h6>{element.dinner.recipe}</h6>
@@ -57,8 +53,6 @@ export default class RandomMeals extends Component {
             <body id='weekbody'>
                 <div id='save'>
                     <button id='randombutton' onClick={this.rng}>Generate a Meal Plan</button>
-                    {/* <button id='randombutton' 
-                onClick={() => this.props.showWeekly(this.state.mealArr)}>Save Meal Plan</button> */}
                 </div>
                 {mealPlan}
             </body>

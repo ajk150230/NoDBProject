@@ -1,3 +1,4 @@
+
 body{
   background-color: rgb(192, 211, 216)
 }
@@ -63,6 +64,7 @@ input{
 #currentrecipes{
   text-align: center;
   color: rgb(0, 0, 0);
+  padding-block-end: 100px;
 }
 #mealCard{
   display: flex;
@@ -134,6 +136,8 @@ input{
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-block-end: 100px;
+  padding-top: 20px;
 }
 #save{
   display: flex;
@@ -153,6 +157,9 @@ input{
   box-shadow: 2px 2px 5px gray;
   margin: 0 auto;
   width: 85%;
+  padding: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
   background-color: white;
 }
 #lunch{
@@ -165,6 +172,12 @@ input{
   margin: 5px;
   background-color: rgb(255, 255, 255)
 }
+#daylunch{
+  color: rgb(0, 140, 255)
+}
+#daydinner{
+  color: rgb(255, 115, 0)
+}
 #randombutton{
   width: 200px;
   color: rgb(255, 255, 255);
@@ -173,4 +186,44 @@ input{
   font-size: 15px;
   border: none;
   box-shadow: 2px 2px 5px gray;
+}
+
+
+footer{
+  position: fixed;
+  top: 91vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+#botbutton{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: sticky;
+  margin: 0 auto;
+  border: none;
+  color: blueviolet;
+  background-color: white;
+  font-weight: bold;
+  box-shadow: 2px 2px 2px 2px rgb(216, 246, 255) ;
+}
+#profilemenu{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin:0 auto;
+  width: 100%;
+  margin: 5px;
+}
+#profile{
+  align-items: center;
+  padding: 20px;
+  width: 200px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  box-shadow: 2px 2px 5px rgb(117, 117, 117);
+  background-color: white;
 }

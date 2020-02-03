@@ -41,7 +41,7 @@ export default class AddRecipe extends React.Component {
                     onChange={this.handleChange} />
                 <input    
                     name ='servingsize'
-                    placeholder= "Enter server size"
+                    placeholder= "Enter Server Size"
                     onChange={this.handleChange} />
                 <input    
                     name ='imgURL'

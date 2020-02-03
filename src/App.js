@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios'
 import AddRecipe from './components/AddRecipe'
 import Map from './components/Map'
+import CalorieCalc from './components/CalorieCalc'
 import RandomMeals from './components/RandomMeals'
 import './App.css'
 
@@ -11,13 +12,14 @@ class App extends React.Component {
     this.state = {
       myRecipes: [],
       updateRate: 0,
-      display: 'home'
+      display: 'home',
+      randomRecipes:[],
     }
     this.postRecipe = this.postRecipe.bind(this)
     this.deleteRecipe = this.deleteRecipe.bind(this)
     this.rateRecipe = this.rateRecipe.bind(this)
     this.updateRating = this.updateRating.bind(this)
-    // this.renderSwitch = this.renderSwitch.bind(this)
+    this.showWeekly = this.showWeekly.bind(this)
   }
   componentDidMount() {
     axios
@@ -40,6 +42,9 @@ class App extends React.Component {
       .then(res => this.postRecipe(res.data))
       .catch(err => console.log(err))
   }
+  showWeekly(param){
+    this.setState({randomRecipes: param})
+  }
   updateRating(e) {
     this.setState({ updateRate: e.target.value })
   }
@@ -55,22 +60,6 @@ class App extends React.Component {
   displayWeekly=()=>{
     this.setState({display: 'weekly'})
   }
-  
-  // renderSwitch(param) {
-  //   switch (param) {
-
-  //     case 'inputs':
-  //       return <AddRecipe postRecipe={this.postRecipe} />;
-  //     // case 'display':
-  //     //   return <div> <h1>Current Recipes</h1> {mealsMapped} </div>
-  //     default:
-  //     return (
-  //       <div>
-  //         <h1>Last Diet</h1>;
-  //       </div>
-  //     )
-  //   }
-  // }
   render() {
     const mealsMapped = this.state.myRecipes.map((element, index) => {
       return (
@@ -85,22 +74,15 @@ class App extends React.Component {
       )
     })
     return (
-      <div id='main'>
-        <header>
+    
+      <main id='main'>
+        <header id='tophead'>
             <button id='topbutton' onClick={this.displayHome}>Home</button>
             <button id='topbutton' onClick={this.displayInput}>Input</button>
             <button id='topbutton' onClick={this.displayMeals}>Meals</button>
             <button id='topbutton' onClick={this.displayWeekly}>WeeklyPlan</button>
         </header>
-        {/* <section>
-        <AddRecipe postRecipe={this.postRecipe} />
-        <h1>Current Recipes</h1>
-        {mealsMapped}
-      </section> */}
-        {/* // <div>
-      //   <button onClick={this.renderSwitch()}>Home</button>
-      //   <button onClick={this.renderSwitch('input')}>Input</button>
-      // </div> */}
+
         {
           this.state.display === 'home'
             ?
@@ -113,17 +95,19 @@ class App extends React.Component {
               this.state.display === 'meals'
                 ?
                 <div id='currentrecipes'>
-                  <h1>Current Recipes</h1>
+                  <h1 id='title'>Current Recipes</h1>
                   {mealsMapped}
                 </div>
                 :
                 this.state.display === 'weekly'
                   ?
-                  <RandomMeals myRecipes={this.state.myRecipes}/>
+                  <RandomMeals myRecipes={this.state.myRecipes} 
+                  showWeekly={this.showWeekly} 
+                  randomRecipes={this.state.randomRecipes}/>
                   :
                   null
     }
-      </div>
+      </main>
     )
   }
 }

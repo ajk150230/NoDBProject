@@ -26,7 +26,7 @@ export default class AddRecipe extends React.Component {
     render() {
         return (
             <section id='inputfield'>
-                <h1>Enter A New Recipe </h1>
+                <h1 id='title'>Enter A New Recipe </h1>
                 <input
                     name='name'
                     placeholder="Enter Recipe Name"

@@ -1,9 +1,20 @@
 import React, { Component } from 'react'
-
+import CalorieCalc from './CalorieCalc'
 export default class Map extends Component {
+    constructor(){
+        super();
+        this.state ={
+            mealCal: 0
+        }
+        this.calc = this.calc.bind(this)
+    }
+    calc(params){
+        const totalCal = this.props.dishName.calories * params
+        this.setState({mealCal: totalCal})
+    }
     render() {
         const { name, type, calories, servingsize, imgURL, rating } = this.props.dishName
-        console.log(this.props.dishName.id)
+        const { mealCal } = this.state
         return (
             <div id='mealCard'>
                 <header id='mealName'>
@@ -18,6 +29,8 @@ export default class Map extends Component {
                 <div id='imagecard'>
                     <img id='foodimg' src={imgURL} alt='imagenotready'></img>
                 </div>
+                    <h3>{mealCal}-Total Calories</h3>
+                    <CalorieCalc calc={this.calc}/>
                 <div id='rating'>
                     <input id='rateinput'
                         placeholder='1-5 stars'
